@@ -64,11 +64,11 @@ Example: isCharAVowel('a') should return true.
 
 Complete the exercise in the space below:
 */
- function isCharAVowel(vowel){
- if(vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u") {
-   return "True"
+ function isCharAVowel(char){
+ if (lowerChar === "a" || lowerChar === "e" || lowerChar === "i" || lowerChar === "o" || lowerChar === "u") {
+   return true;
  } else {
-   return "False"
+   return false;
  }
 }
 
@@ -169,4 +169,108 @@ let tip = calculateTip(billAmount, tipPercentage);
 
 console.log('Exercise 7 Result:', calculateTip(50, 20));
 
+/*
+Exercise 8: convertTemperature()
+
+Write a function named convertTemperature. 
+It takes two arguments: a temperature and a string representing the 
+scale ('C' for Celsius, 'F' for Fahrenheit). 
+Convert the temperature to the other scale.
+
+Example: convertTemperature(32, 'C') should return 89.6 (Fahrenheit).
+Example: convertTemperature(32, 'F') should return 0 (Celsius).
+
+Complete the exercise in the space below:
+*/
+
+function convertTemperature(temp, scale) {
+  if (scale === 'C') {
+    return (temp * 9/5) + 32;
+  } else if (scale === 'F') {
+    return (temp - 32) * 5/9;
+  } else {
+    return 'invalid scale. Please use "C"  for Celsius or "F" for Fahrenheit'
+  }
+}
+
+/*
+Exercise 9: basicCalculator()
+
+Create a function named basicCalculator. 
+It should take three arguments: two numbers and a string representing 
+an operation ('add', 'subtract', 'multiply', 'divide'). 
+Perform the provided operation on the two numbers. 
+In operations where the order of numbers is important, 
+treat the first parameter as the first operand and the 
+second parameter as the second operand.
+
+Example: basicCalculator(10, 5, 'subtract') should return 5.
+
+Complete the exercise in the space below:
+*/
+
+function basicCalculator(num1, num2, operation) {
+    switch (operation) {
+      case 'add' :
+        return num1 + num2;
+      case 'subtract' :
+        return num1 - num2;
+      case 'mulitply' :
+        return num1 * num2;
+      case 'divide' :
+        if (num2 === 0) {
+          return "Error: Cannot divide by zero";
+        } else {
+            return num1 / num2;
+        }
+        default:
+          return "Error: Invalid operation";
+    }
+  }
+
+/*
+Exercise 10: calculateGrade()
+
+Define a function called calculateGrade. 
+It should take a numerical score and return the corresponding letter 
+grade (A, B, C, D, F). 
+
+For example, 90 and above yields an 'A', 80-89 is a 'B', 
+and 70-79 is a 'C', 60-69 is a 'D' and anything lower than a 60 is an 'F'.
+
+Example: calculateGrade(100) should return A.
+
+Complete the exercise in the space below:
+*/
+
+function calculateGrade(score) {
+  if (score >= 90) {
+     return 'A';
+  } else if (score >= 80) {
+     return 'B';
+  } else if (score >= 70) {
+     return 'C';
+  } else if (score >= 60) {
+     return 'D';
+  } else {
+     return 'F';
+  }
+}
+
+
+console.log('Exercise 10 Result:', calculateGrade(85));
+
+
+
+
+
+
+
+
+
+
+console.log('Exercise 9 Result:', basicCalculator(10, 5, "subtract"));
+
+
+console.log('Exercise 8 Result:', convertTemperature(32, "C"));
 
